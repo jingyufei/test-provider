@@ -1,7 +1,6 @@
 package com.jing.serviceImpl;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +12,7 @@ import com.jing.service.UserService;
 @Service("userService")
 public class UserServiceImpl implements UserService{
 
-	private static Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
+	private static Logger logger = Logger.getLogger(UserServiceImpl.class);
 	
 	@Autowired
 	private UserMapper userMapper;
@@ -21,6 +20,7 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public User getUser() {
 		User user = new User(2, "小明", 20);
+		logger.info("get user :" + user.toString());
 		return user;
 	}
 
