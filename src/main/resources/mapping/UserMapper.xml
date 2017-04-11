@@ -6,4 +6,7 @@
 		values 
 		(#{id,jdbcType=INTEGER},#{name,jdbcType=VARCHAR},#{age,jdbcType=INTEGER})
 	</insert>
+	<update id="updateUser" parameterType="String">
+		update user set age= age +1 where id = #{id}
+	</update>
 </mapper>
